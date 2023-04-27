@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ROUTES, RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 const myroute :Routes=[
@@ -24,7 +25,8 @@ const myroute :Routes=[
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(myroute),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
