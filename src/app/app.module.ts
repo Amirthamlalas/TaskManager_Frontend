@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 
@@ -16,13 +17,18 @@ const myroute :Routes=[
   {
     path:"",
     component:LoginPageComponent
+  },
+  {
+    path:"home",
+    component:HomePageComponent
   }
 
 ]
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

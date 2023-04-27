@@ -21,6 +21,7 @@ export class LoginPageComponent {
       (response:any)=>{
         if(response.status=="success"){
           this.toastr.success("Login is successfull", "success")
+          this.route.navigate(['/home']);
           
           }
         else{
