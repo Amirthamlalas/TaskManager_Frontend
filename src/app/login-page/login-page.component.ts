@@ -20,10 +20,7 @@ export class LoginPageComponent {
     this.api.userLogin(data).subscribe(
       (response:any)=>{
         if(response.status=="success"){
-          this.toastr.success("Login is successfull", "success", {
-            titleClass: "center",
-            messageClass: "center"
-          })
+          this.toastr.success("Login is successfull", "success")
           
           }
         else{
