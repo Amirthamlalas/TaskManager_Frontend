@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class LoginPageComponent {
 
+  email=""
+  password=""
+constructor(){}
+  login=()=>{
+    let data:any={"email":this.email,"password":this.password}
+
+   
+    console.log(data)
+  }
+
 }
