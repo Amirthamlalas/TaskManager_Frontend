@@ -1,9 +1,14 @@
 .center {
     text-align: center;
   }
-  
-  .toast-success {
-    padding-left: 80px;
-    text-align: center;
-    background-position: 35% !important;
+
+ 
+  ::ng-deep .custom-toast {
+    background-color: rgb(116, 161, 196);
+    color: black;
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+
   }

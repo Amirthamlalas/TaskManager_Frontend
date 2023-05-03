@@ -1,32 +1,58 @@
 <div class="container">
-    <div class="row mt-4" style="padding-top: 150px;">
-        <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-        </div>
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
 
-        <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+            <div class="row g-3" style="padding-top: 150px;">
 
-            <div class="row g-3">
-                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+               
+                 <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
 
-                    <label for="" class="form-label">Email</label>
-                    <input [(ngModel)]="email" type="email" class="form-control" required>
                 </div>
-                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <label for="" class="form-label">Password</label>
-                    <input [(ngModel)]="password" type="password" class="form-control" required>
+
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                    <div class="row g-3">
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <h1 style="color: aliceblue;">Here you can Login</h1>
+                            <p style="color: aliceblue;">Let's join us :)</p>
+
+                            <label style="color: aliceblue;" for="" class="form-label">Email</label>
+                            <input [(ngModel)]="email" type="email" class="form-control" required>
+
+                        </div>
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <label style="color: aliceblue;" for="" class="form-label">Password</label>
+                            <input [(ngModel)]="password" type="password" class="form-control" required>
+
+                        </div>
+                        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"style="text-align: center;padding-top: 30px;">
+                            <button style="background-color: #1242f1; /* Green */
+                                border: none;
+                                color: white;
+                                padding: 12px 30px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                
+                                font-size: 16px;
+                                margin: 4px 2px;
+                                cursor: pointer;
+                                border-radius: 10px;
+                                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);" onmouseover="this.style.backgroundColor='#3e8e41'" onmouseout="this.style.backgroundColor='blue'" (click)="login()" class="btn btn-primary">Login</button>
+
+
+                        </div>
+                    </div>
+
+                    
+
+
                 </div>
-                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" style="text-align: center;">
-                    <button  (click)="login()" class="btn btn-success">Login</button>
-                </div>
-              
+
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+
+                    </div>
             </div>
-
-
-            <div class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-
-                
-            </div>
-
         </div>
     </div>
 </div>

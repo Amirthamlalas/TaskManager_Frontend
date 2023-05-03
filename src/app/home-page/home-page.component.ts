@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+
+  name:any={}
+  
+constructor(private api:ApiService){
+
+  let userId=localStorage.getItem("id");
+
+
+  let name = localStorage.getItem("name");
+  this.name=name;
+  
+
+  
+
+}
+
 
 }

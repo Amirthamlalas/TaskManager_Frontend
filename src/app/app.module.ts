@@ -7,10 +7,12 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { ROUTES, RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
-
+import { AuthGuard } from './auth/auth.guard';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DatePipe } from '@angular/common';
 
 
 const myroute :Routes=[
@@ -18,9 +20,10 @@ const myroute :Routes=[
     path:"",
     component:LoginPageComponent
   },
+ 
   {
     path:"home",
-    component:HomePageComponent
+    component:HomePageComponent,canActivate:[AuthGuard]
   }
 
 ]
@@ -28,7 +31,10 @@ const myroute :Routes=[
   declarations: [
     AppComponent,
     LoginPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavbarComponent,
+   
+
   ],
   imports: [
     BrowserModule,
@@ -36,10 +42,20 @@ const myroute :Routes=[
     RouterModule.forRoot(myroute),
     FormsModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      closeButton: true,
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      toastClass: 'custom-toast'
+      
+    }),
+    BrowserAnimationsModule,
+    DatePipe
   ],
-  providers: [],
+  providers: [DatePipe,
+    ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

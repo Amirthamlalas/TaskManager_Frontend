@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   constructor() { }
-  isLoggedIn = false;
+ 
   
   isAuthenticated(){
-    return this.isLoggedIn;
+    return localStorage.getItem("data")!=null;
   }
 }

@@ -11,4 +11,18 @@ export class ApiService {
   userLogin=(DatatoSend:any)=>{
     return this.http.post("http://localhost:8080/login",DatatoSend)
   }
+
+  userLogout=(DatatoSend:any)=>{
+    return this.http.post("http://localhost:8080/logout",DatatoSend)
+
+  }
+
+  logView=()=>{
+    return this.http.get("http://localhost:8080/view")
+  }
+
+  log=(DatatoSend:any)=>{
+    return this.http.post("http://localhost:8080/logo",DatatoSend)
+
+  }
 }
