@@ -10,18 +10,21 @@
             <a class="nav-link active" aria-current="page" href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" style="padding-left: 800px;">Last Logged in : {{logint}} </a>
+            <a class="nav-link active" aria-current="page" style="padding-left: 850px;">Last Logged in : {{logint}} </a>
           </li>
           <li class="nav-item">
             <a  class="nav-link active" aria-current="page" >Last logout : {{logOut}} </a>
           </li>
           
-          
-          <li class="nav-item">
+          <!-- <li class="nav-item">
            <button (click)="logout()" class="btn btn-light">Logout</button>
           </li>
-         
-          
+          -->
+          <li class="nav-item">
+            <a  class="nav-link active" aria-current="page" (click)="logout()" >logout </a>
+          </li>
+
+      
         </ul>
       </div>
     </div>

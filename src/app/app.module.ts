@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ROUTES, RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DatePipe } from '@angular/common';
-
+import { HttpInterceptorService } from './interceptors/http-interceptor.service';
 
 const myroute :Routes=[
   {
     path:"",
-    component:LoginPageComponent
+    component:LoginPageComponent,
   },
  
   {
@@ -54,7 +54,7 @@ const myroute :Routes=[
     BrowserAnimationsModule,
     DatePipe
   ],
-  providers: [DatePipe,
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },DatePipe,
     ToastrService],
   bootstrap: [AppComponent]
 })

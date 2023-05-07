@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
@@ -19,6 +20,7 @@ export class LoginPageComponent {
    
   }
 
+
 login=()=>{
     let data:any={"email":this.email,"password":this.password}
     let currenttime:any= new Date();
@@ -26,13 +28,16 @@ login=()=>{
     this.api.userLogin(data).subscribe(
       (response:any)=>{
         if(response.status=="success"){
-          localStorage.setItem('data',data);
+          
+          
           localStorage.setItem('name',response.name);
+          localStorage.setItem('token',response.token);
+          console.log(response.token);
           localStorage.setItem('id',response.userid);
           localStorage.setItem('time',response.time)
           this.toastr.success("Login is successfull", "success",{"progressBar":true,"progressAnimation":'increasing'})
           
-          this.route.navigate(['home']);
+          this.route.navigate(['/home']);
 
 
           let formattedTime:any= this.datePipe.transform(currenttime, 'shortTime');
