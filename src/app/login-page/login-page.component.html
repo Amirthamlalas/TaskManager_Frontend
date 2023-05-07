@@ -19,13 +19,20 @@
                             <p style="color: aliceblue;">Let's join us :)</p>
 
                             <label style="color: aliceblue;" for="" class="form-label">Email</label>
-                            <input [(ngModel)]="email" type="email" class="form-control" required>
-                            
+                            <input [(ngModel)]="email" type="email" (ngModelChange)="onEmailChange()" class="form-control" required>
+                            <div *ngIf="emailInvalid">
+                                <div style="color: aliceblue;" *ngIf="emailRequired">Email is required.</div>
+                                <div style="color: aliceblue;" *ngIf="emailInvalidFormat">Email format is invalid.</div>
+                              </div>
 
                         </div>
                         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                             <label style="color: aliceblue;" for="" class="form-label">Password</label>
-                            <input [(ngModel)]="password" type="password" class="form-control" required>
+                            <input [(ngModel)]="password" type="password" (ngModelChange)="onPasswordChange()" class="form-control" required>
+                            <div *ngIf="passwordInvalid">
+                                <div style="color: aliceblue;" *ngIf="passwordRequired">Password is required.</div>
+                                <div  style="color: aliceblue;" *ngIf="passwordMinLength">Password should be at least 8 characters long.</div>
+                              </div>
 
                         </div>
                         <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"style="text-align: center;padding-top: 30px;">
@@ -41,7 +48,7 @@
                                 margin: 4px 2px;
                                 cursor: pointer;
                                 border-radius: 10px;
-                                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);" onmouseover="this.style.backgroundColor='#3e8e41'" onmouseout="this.style.backgroundColor='blue'" (click)="login()" class="btn btn-primary">Login</button>
+                                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);" onmouseover="this.style.backgroundColor='#3e8e41'" onmouseout="this.style.backgroundColor='blue'" (click)="login()"  class="btn btn-primary">Login</button>
 
 
                         </div>
