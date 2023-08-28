@@ -14,7 +14,7 @@ export class HttpInterceptorService implements HttpInterceptor {
     let authreq=req
     const jwt = this.authService.getToken();
     if (jwt!=null) {
-    authreq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + jwt) });
+    authreq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + jwt) }); 
    }
    return next.handle(authreq);
  }

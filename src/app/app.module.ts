@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { ROUTES, RouterModule, Routes } from '@angular/router';
+import {  RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
@@ -18,7 +18,7 @@ import { HttpInterceptorService } from './interceptors/http-interceptor.service'
 const myroute :Routes=[
   {
     path:"",
-    component:LoginPageComponent,
+    component:LoginPageComponent
   },
  
   {
@@ -43,7 +43,7 @@ const myroute :Routes=[
     FormsModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right',
+     
       closeButton: true,
       timeOut: 3000,
       progressBar: true,

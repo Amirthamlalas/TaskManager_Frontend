@@ -12,9 +12,7 @@ export class HomePageComponent {
   
 constructor(private api:ApiService){
 
-  let userId=localStorage.getItem("id");
-
-
+ 
   let name = localStorage.getItem("name");
   this.name=name;
   
